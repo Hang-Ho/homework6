@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>Weather</title>
+</head>
+
+<body>
+
+    <div class="bg-dark text-white">
+        <h1>Weather Dashboard</h1>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2">
+            <h5 class="text-white">Search for a City:</h5>
+            <form>
+                <input class="rounded" id="input-box">
+                <button id="search-btn" class="btn-primary rounded"><i class="fa fa-search"></i></button>
+            </form>
+            <br>
+            
+            <div>
+                <ul id="city-list" class="list-group">
+
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="col-sm-9">
+            <div class="jumbotron main-part mr-5">
+    
+            </div>
+            <div class="five-day-forecast text-white">
+
+            </div>
+
+        </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

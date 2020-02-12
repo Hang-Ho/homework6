@@ -1,0 +1,14 @@
+
+h1{
+    background-color: rgb(21, 18, 48);
+    text-align: center;
+    word-spacing: 10px;
+}
+
+body{
+    background-image: url("weatherBackground.jpg");
+    font-family: 'Lato', sans-serif;
+}
+li{
+    cursor: pointer;
+}
