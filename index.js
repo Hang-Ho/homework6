@@ -10,24 +10,44 @@ $(document).ready(function () {
     }
 
     getLocation();
-
-
+   
+   let cityArray = [];
     $("#search-btn").on('click', function (event) {
         event.preventDefault();
         $(".main-part").empty();
         $(".five-day-forecast").empty();
         var cityName = $("#input-box").val();
-
+        cityArray.push(cityName);
+        localStorage.setItem("cityList", JSON.stringify(cityArray));
         var url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=166a433c57516f51dfab1f7edaed8413";
-        var cityList = $("<li class='list-group-item city'>");
-        cityList.text(cityName);
-        $("#city-list").prepend(cityList);
+        displayCity();
         var caption = $("<h5>").html("5-Day Forecast: ");
         $(".five-day-forecast").append(caption);
         searchCity(url);
 
     })
+    citySearch();
+    function displayCity(){
+        $("#city-list").empty();
+        for (let i = 0; i<cityArray.length; i++) {
+            var cityList = $("<li class='list-group-item city'>");
+            cityList.text(cityArray[i]);
+            $("#city-list").prepend(cityList);
+        }
+    }
+    function citySearch() {
+        console.log(cityArray)
+        cityArray = JSON.parse(localStorage.getItem("cityList"));
+        console.log(cityArray);
+        if (cityArray === null) {
+            cityArray = [];
+        }
 
+        displayCity();
+
+     
+        
+    }
     function searchCity(url) {
 
         $.ajax({
